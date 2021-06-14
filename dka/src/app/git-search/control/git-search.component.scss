@@ -1,0 +1,22 @@
+.search-container {
+  width: 0;
+  flex: 1;
+  min-width: 400px;
+  padding: 10px;
+}
+  
+.search-info {
+  display: flex;
+  flex-direction: column;
+  padding: 5px;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+  
+.search-form {
+  padding: 5px;
+}
+  
+.search-field {
+  min-width: 350px;
+}

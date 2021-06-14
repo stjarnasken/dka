@@ -1,0 +1,18 @@
+<div class="search-container">
+  <form [formGroup]="searchForm" class="search-form">
+    <div class="search-info">
+      <span >{{status$ | async}}</span>
+    </div>
+    <mat-form-field class="search-field">
+      <mat-label>Search</mat-label>
+      <input (keyup.enter)="onEnter()" type="text" matInput formControlName="searchInput" [matAutocomplete]="auto">
+      <mat-autocomplete #auto="matAutocomplete" [displayWith]="displayWith">
+        <mat-option *ngFor="let searchResult of searchResults$ | async" [value]="searchResult">
+          <mat-icon *ngIf="searchResult.queryType === QueryType.Repo">source</mat-icon>
+          <mat-icon *ngIf="searchResult.queryType === QueryType.User">person</mat-icon>
+          {{searchResult.searchHit}}
+        </mat-option>
+      </mat-autocomplete>
+    </mat-form-field>
+  </form>
+</div>
